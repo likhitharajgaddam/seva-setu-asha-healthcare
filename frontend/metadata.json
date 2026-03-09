@@ -1,0 +1,7 @@
+{
+  "name": "SevaSetu: ASHA Worker Companion",
+  "description": "An offline-first patient management system for ASHA workers to record maternal health, child immunization, and chronic disease data with AI-powered health insights and GPS tracking.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
