@@ -155,10 +155,15 @@ app.post("/api/verify-otp", (req, res) => {
 // ---------------- START SERVER ----------------
 
 
+const mongoURI = process.env.MONGO_URI;
+if (mongoURI) {
 mongoose
-  .connect(process.env.MONGO_URI)
+  .connect(mongoURI)
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log("MongoDB Error:", err));
+} else {
+  console.log("⚠️ No MONGO_URI provided in environment variables. Starting without database.");
+}
 
 const PORT = process.env.PORT || 4000;
 
